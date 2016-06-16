@@ -1,0 +1,10 @@
+---
+ntp_server1: 0.rhel.pool.ntp.org
+ntp_server2: 1.rhel.pool.ntp.org
+ntp_server3: 2.rhel.pool.ntp.org
+ntp_server4: 3.rhel.pool.ntp.org
+nameserver1: 192.168.65.162
+nameserver2: 192.168.65.163
+snmp_community: T0pS3cr3t
+snmp_server1: 10.0.0.5
+snmp_server2: 192.168.0.5

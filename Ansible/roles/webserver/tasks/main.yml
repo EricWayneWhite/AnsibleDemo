@@ -1,0 +1,33 @@
+---
+- name: Ensure that Git is installed
+  yum:
+    name: git
+    state: present
+
+- name: Ensure that Apache is installed
+  yum:
+    name: httpd
+    state: present
+
+- name: Start Apache Services
+  service:
+    name: httpd
+    enabled: yes
+    state: started
+
+- name: Deploy configuration file
+  template:
+    src: httpd.conf.j2
+    dest: /etc/httpd/conf/httpd.conf
+  notify:
+    - Restart Apache
+
+- name: Clone site files using Git
+  git:
+    repo: "{{ git_repo }}"
+    dest: "{{ doc_root }}"
+
+- name: Stop iptables
+  service:
+    name: iptables
+    state: stopped

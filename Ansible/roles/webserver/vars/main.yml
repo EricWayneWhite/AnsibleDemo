@@ -1,0 +1,6 @@
+---
+http_port: 80
+doc_dir: /ansible/
+doc_root: /var/www/html/
+max_clients: 5
+git_repo: https://git_host/user_name/web_demo.git
